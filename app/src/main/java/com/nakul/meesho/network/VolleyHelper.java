@@ -48,7 +48,7 @@ public final class VolleyHelper {
         return mRequestQueue;
     }
 
-    public static JSONObject volleySynchronous(int pageIndex, String repoName, String ownerName) {
+    public static JSONObject getRepoIssues(int pageIndex, String repoName, String ownerName) {
         String response = "";
         JSONObject responseJson = new JSONObject();
         boolean error = false;
