@@ -39,8 +39,6 @@ public class RepoPagingLibViewModel extends ViewModel {
         listLiveData = new LivePagedListBuilder<>(repoDataSourceFactory, pagedListConfig)
                 .build();
 
-        progressLoadStatus = Transformations.switchMap(repoDataSourceFactory.getMutableLiveData(), RepoDataSourceClass::getProgressLiveStatus);
-
     }
 
     public void reLoadList(){
