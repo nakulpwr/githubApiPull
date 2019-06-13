@@ -54,7 +54,7 @@ public final class VolleyHelper {
         boolean error = false;
         try {
             RequestFuture<String> future = RequestFuture.newFuture();
-            StringRequest request = new StringRequest(Request.Method.GET, "https://api.github.com/repos/" + ownerName + "/" + repoName + "/pulls?state=all&" +
+            StringRequest request = new StringRequest(Request.Method.GET, "https://api.github.com/repos/" + ownerName + "/" + repoName + "/pulls?state=open&" +
                     "per_page=10&page="+(pageIndex+1), future, future) {
 
 
