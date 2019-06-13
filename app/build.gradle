@@ -51,4 +51,8 @@ dependencies {
 
     /*Paging*/
     implementation 'android.arch.paging:runtime:1.0.1'
+
+    /*Glide for image loading*/
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 }
