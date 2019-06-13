@@ -4,6 +4,8 @@ package com.nakul.meesho.view;
 import android.widget.ImageView;
 import android.databinding.BindingAdapter;
 
+import com.nakul.meesho.GlideApp;
+
 
 public class ImageBinder {
 

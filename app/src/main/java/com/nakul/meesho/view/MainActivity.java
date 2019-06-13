@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Repository repository = new Repository();
-        repository.setParamsValues("platform_frameworks_base","AospExtended");
         viewModelFactory = new ViewModelFactory(repository);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(RepoPagingLibViewModel.class);
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             viewModelFactory.setRepositoryParams(binding.repoNameEditTxt.getEditText().getText().toString(), binding.ownerEditTxt.getEditText().getText().toString());
-            viewModel.getListLiveData().getValue().getDataSource().invalidate();
+            viewModel.reLoadList();
         });
         final GestureDetector mGestureDetector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
             @Override

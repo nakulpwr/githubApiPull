@@ -45,6 +45,7 @@ public class RepoPagingLibViewModel extends ViewModel {
 
     public void reLoadList(){
         repoDataSourceFactory.getMutableLiveData().getValue().invalidate();
+        progressLoadStatus = Transformations.switchMap(repoDataSourceFactory.getMutableLiveData(), RepoDataSourceClass::getProgressLiveStatus);
     }
 
     public LiveData<String> getProgressLoadStatus() {
